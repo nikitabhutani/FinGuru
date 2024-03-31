@@ -49,7 +49,8 @@ class ResourceLinkItem extends StatelessWidget {
           title,
           style: TextStyle(
             fontSize: 16,
-            color: Colors.blue, // You can change the color as needed
+            color: Color.fromARGB(
+                255, 99, 250, 255), // You can change the color as needed
           ),
         ),
       ),

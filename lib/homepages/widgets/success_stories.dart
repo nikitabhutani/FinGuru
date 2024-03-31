@@ -5,13 +5,13 @@ class SuccessStoriesWidget extends StatelessWidget {
     SuccessStory(
       title: 'From Idea to IPO: My Startup Journey',
       description:
-          'Learn how Jane Doe turned her idea into a successful IPO with the help of FinGuru.',
+          'Learn how Mihika Raj turned her idea into a successful IPO with the help of FinGuru.',
       imageUrl: 'assets/images/schemes.png',
     ),
     SuccessStory(
       title: 'Breaking Barriers: A Woman Entrepreneur\'s Story',
       description:
-          'Read about how Sarah Smith overcame obstacles and achieved success in the startup world.',
+          'Read about how Sarah Sharma overcame obstacles and achieved success in the startup world.',
       imageUrl: 'assets/images/woman_startup.png',
     ),
   ];

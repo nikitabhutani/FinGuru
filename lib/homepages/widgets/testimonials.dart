@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class TestimonialsWidget extends StatelessWidget {
   final List<Testimonial> testimonials = [
     Testimonial(
-      name: 'Alice Johnson',
+      name: 'Shreya Aggarwal',
       company: 'ABC Startup',
       testimonial:
           'FinGuru has been an invaluable resource for our startup. The support and guidance we received helped us navigate through various challenges and achieve our goals.',
     ),
     Testimonial(
-      name: 'John Smith',
+      name: 'Smita Marwaha',
       company: 'XYZ Ventures',
       testimonial:
           'I highly recommend FinGuru to any aspiring women entrepreneur. The platform provides access to a wealth of resources and a supportive community.',

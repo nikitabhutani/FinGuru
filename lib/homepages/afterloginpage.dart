@@ -1,8 +1,15 @@
-import 'package:finguru/common/homepages/widgets/events.dart';
-import 'package:finguru/common/homepages/widgets/faqs.dart';
-import 'package:finguru/common/homepages/widgets/resource.dart';
-import 'package:finguru/common/homepages/widgets/testimonials.dart';
+import 'package:finguru/features/govt_schemes.dart';
+import 'package:finguru/features/incubation_centres.dart';
+import 'package:finguru/features/newsletter_signup.dart';
+import 'package:finguru/features/startupjourney.dart';
+import 'package:finguru/homepages/widgets/events.dart';
+import 'package:finguru/homepages/widgets/faqs.dart';
+import 'package:finguru/homepages/widgets/resource.dart';
+import 'package:finguru/homepages/widgets/testimonials.dart';
+import 'package:finguru/login/login.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class AfterLoginPage extends StatelessWidget {
   @override
@@ -83,29 +90,22 @@ class AfterLoginPage extends StatelessWidget {
                     description:
                         'Discover incubation centers to nurture your startup.',
                     image: 'assets/images/woman_startup.png',
-                    onTap: () {
-                      // Handle onTap
-                    },
+                    onTap: () => Get.to(() => IncubationCentersPage()),
                   ),
                   SizedBox(width: 20),
                   FeatureCard(
-                    title: 'Startup Journey',
-                    description:
-                        'Navigate through your startup journey with ease.',
-                    image: 'assets/images/path.png',
-                    onTap: () {
-                      // Handle onTap
-                    },
-                  ),
+                      title: 'Startup Journey',
+                      description:
+                          'Navigate through your startup journey with ease.',
+                      image: 'assets/images/path.png',
+                      onTap: () => Get.to(() => StartupJourneyPage())),
                   SizedBox(width: 20),
                   FeatureCard(
                     title: 'Government Schemes',
                     description:
                         'Explore government schemes to support women founders.',
                     image: 'assets/images/schemes.png',
-                    onTap: () {
-                      // Handle onTap
-                    },
+                    onTap: () => Get.to(() => GovernmentSchemesPage()),
                   ),
                 ],
               ),
@@ -134,19 +134,20 @@ class AfterLoginPage extends StatelessWidget {
                 title: 'FAQs',
                 color: Colors.white,
               ),
-               FAQsWidget(),
-              SizedBox(height: 20),
-              SectionHeading(
-                title: 'Blog Feed',
-                color: Colors.white,
-              ),
+              FAQsWidget(),
+              // SizedBox(height: 20),
+              // SectionHeading(
+              //   title: 'Blog Feed',
+              //   color: Colors.white,
+              // ),
               // Add Blog Feed Widget
               SizedBox(height: 20),
               SectionHeading(
                 title: 'Newsletter Signup',
                 color: Colors.white,
+                onTap: () => Get.to(() => NewsletterSignupPage()),
               ),
-              // Add Newsletter Signup Widget
+              //  NewsletterSignupPage(),
               SizedBox(height: 20),
               SectionHeading(
                 title: 'Follow Us',
@@ -235,20 +236,42 @@ class FeatureCard extends StatelessWidget {
 class SectionHeading extends StatelessWidget {
   final String title;
   final Color color;
+  final VoidCallback? onTap; // Add a VoidCallback onTap parameter
+
   const SectionHeading({
     Key? key,
     required this.title,
     required this.color,
+    this.onTap, // Make onTap parameter optional
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-        color: color,
+    return GestureDetector(
+      onTap: onTap, // Execute the onTap callback when tapped
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: color,
+            ),
+          ),
+          SizedBox(height: 4),
+          if (onTap !=
+              null) // If onTap is provided, show "Click here to sign up for our weekly newsletter"
+            Text(
+              'Click here to sign up for our weekly newsletter',
+              style: TextStyle(
+                fontSize: 14,
+                color: Color.fromARGB(255, 94, 218, 255),
+                decoration: TextDecoration.underline,
+              ),
+            ),
+        ],
       ),
     );
   }

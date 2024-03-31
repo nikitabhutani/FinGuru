@@ -1,4 +1,4 @@
-import 'package:finguru/common/homepages/homepage.dart';
+import 'package:finguru/homepages/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 

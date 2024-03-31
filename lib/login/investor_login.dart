@@ -1,16 +1,17 @@
+import 'package:finguru/homepages/afterlogin_Investor.dart';
 import 'package:finguru/homepages/afterloginpage.dart';
 import 'package:finguru/password_configurations/forget_password.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Login As A Woman Entrepreneur',
+          'Login As An Investor',
           style: TextStyle(
             color: Colors.white,
           ),
@@ -97,7 +98,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () => Get.to(() => AfterLoginPage()),
+                      onPressed: () => Get.to(() => InvestorDashboard()),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(

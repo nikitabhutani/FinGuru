@@ -1,6 +1,7 @@
-import 'package:finguru/common/homepages/afterloginpage.dart';
-import 'package:finguru/common/homepages/widgets/success_stories.dart';
-import 'package:finguru/common/homepages/widgets/testimonials.dart';
+import 'package:finguru/homepages/afterloginpage.dart';
+import 'package:finguru/homepages/widgets/success_stories.dart';
+import 'package:finguru/homepages/widgets/testimonials.dart';
+import 'package:finguru/login/investor_login.dart';
 import 'package:finguru/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,12 +29,12 @@ class HomePage extends StatelessWidget {
                         children: [
                           ElevatedButton(
                             onPressed: () => Get.to(() => LoginScreen()),
-                            child: Text('LogIn'),
+                            child: Text('i am an entrepreneur'),
                           ),
                           SizedBox(height: 10),
                           ElevatedButton(
-                            onPressed: () => Get.to(() => LoginScreen()),
-                            child: Text('SignUp'),
+                            onPressed: () => Get.to(() => LoginScreen2()),
+                            child: Text('I am an investor'),
                           ),
                         ],
                       ),
